@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue.js API Client for Laravel Back-end</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="container" style="background-color: #9bcfe8;">
+        <div class="jumbotron">
+            <h1 class="display-4 text-center">Vue.js Client Api </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4 offset-md-4" style="background-color: #98b9f2;">
+
+                <form v-on:submit.prevent="checkForm" method="post" novalidate="true">
+                    <h2>Create or Update User</h2>
+                    <p v-if="errors.length">
+                        <b v-cloak>Please correct the following error(s):</b>
+                        <ul v-cloak class="list-group">
+                            <li class="alert alert-danger" v-for="error in errors">{{ error }}</li>
+                        </ul>
+                    </p>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" name="name" id="name" v-model="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control" type="text" name="email" id="email" v-model="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Subject</label>
+                        <input class="form-control" type="text" name="subject" id="email" v-model="subject">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Textarea">Body - Message</label>
+                        <textarea class="form-control" rows="3" v-model="body"></textarea>
+                    </div>
+
+
+                    <input class="btn btn-primary" type="submit" value="Submit">
+
+                </form>
+                <!-- <button id="vue" type="button" v-on:click="debuglog" class="btn btn-primary">Submit test</button> -->
+            </div>
+            <!--col-md-4 offset-md-4 close-->
+            <div v-cloak class="col-md-4">
+                <div v-cloak class="list-group-item" v-for="(value, key) in newItem.data">
+                    {{ key }}: {{ value }}
+                    <p>{{value.name}} {{value.email}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- row close-->
+        <div class="row" style="background-color: #b4c0c9">
+            <div class="form-group">
+                <label style="padding: 20px;">
+                    <h2>Search</h2>
+                </label>
+                <div class="col-10">
+                    <input class="form-control" type="search" v-model="searchVar">
+                    <!-- <button class="btn btn-primary" @click="getSearch()">Search</button> -->
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Explore the Results</h1>
+                <!-- <h2 v-show="flag"> {{helpertext}} </h2> -->
+
+                <ul class="list-group">
+                    <div class="list-group-item" v-for="(value, key) in searchResult">
+                        {{ key }}: {{ value }}
+                        <p>{{value.name}} {{value.email}}</p>
+                    </div>
+                </ul>
+                <!-- <button class="btn btn-primary" @click="getAllCouriers()">Click me</button> -->
+            </div>
+        </div>
+        <!-- row close 65 line-->
+    </div>
+    <!-- container close-->
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+<script src="app.js"></script>
+
+</html>

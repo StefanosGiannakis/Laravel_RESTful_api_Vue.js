@@ -1,0 +1,35 @@
+﻿
+Καλησπέρα ,
+
+Για να ξεκινήσουμε κάνουμε τα παρακάτω βήματα 
+1. composer install 
+2. μετονομάζουμε το .env.example σε .env και βάζουμε τα στοιχεία της βάσης μας  
+3. php artisan migrate
+4. php artisan db:seed για να βάλουμε fake data στην βάση μας με την βοήθεια του faker
+5. php artisan key:generate
+6. Στον φάκελο Vue_Client_Api έχω το app.js και το index.js που είναι το front-end μας.
+στο app.js πρέπει να αλλαχθούν τα url με τα δικα σας στο get και post.
+
+Back-end 
+Δεν χρησιμοποιώ τα Views του Laravel . Χρησιμοποιώ controller resourses και έχω τρεις μεθόδους 
+που βρίσκονται στο routes/api.php 
+1. Retrive a User(s), εδώ φέρνουμε αποτελέσματα στις περιπτώσεις που το email ειναι ακριβώς ίδιο ή αν 
+υπάρχει "LIKE" σε name, body , subject
+2. Create or Update, χρησιμοποιώ την ίδια μέθοδο του controller με την βοήθεια της firstOrCreate() μεθόδου
+
+3. Get all Users , για δοκιμές κατά το developement τα αποτελέσματα είναι paginate ανά 20
+
+Front-end
+1.Εδώ έχουμε μια φόρμα που κάνει validate τα στοιχεία. Χωρίς ανανέωση της σελίδας βλέπουμε στο δεξιό μέρος της οθόνης μας τον χρήστη 
+που κάναμε Create ή Update
+2. Στο κάτω μέρος έχουμε ένα search box, όταν πληκτρολογήσουμε τα 5 πρώτα γράμματα της αναζήτησης μας πέρνουμε αποτελέσματα
+από την βάση με ajax και με καθυστέρηση 0.5 δευτερολέπτων(χρησιμοποιώ lodash.js _.debounce() method) για να περιορίσουμε τα api calls.
+Μπορούμε να το χρησιμοποιήσουμε από το index.html του Vue_Client_Api.
+
+Αν χρειαστείτε κάτι θα με βρείτε εδώ . satchfast@gmail.com
+
+
+
+
+
+
