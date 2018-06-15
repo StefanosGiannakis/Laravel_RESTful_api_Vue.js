@@ -26,7 +26,7 @@ Front-end
 από την βάση με ajax και με καθυστέρηση 0.5 δευτερολέπτων(χρησιμοποιώ lodash.js _.debounce() method) για να περιορίσουμε τα api calls.
 Μπορούμε να το χρησιμοποιήσουμε από το index.html του Vue_Client_Api.
 
-Αν χρειαστείτε κάτι θα με βρείτε εδώ . satchfast@gmail.com
+Αν χρειαστείτε κάτι θα με βρείτε εδώ . satchfast _at* _gmail.com
 
 
 
